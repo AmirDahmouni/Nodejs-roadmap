@@ -12,12 +12,21 @@ a program that converts Javascript code into lower level or machine code that mi
 libuv is a C library that is used to abstract non-blocking I/O operations to a consistent interface across all supported platforms. It provides mechanisms to handle file system, DNS, network, child processes, pipes, signal handling, polling and streamin
 
 # NPM
-npm is the standard package manager for Node.js
+**npm** is the standard package manager for Node.js
+
+**local packages** are installed in the directory where you run npm install <package-name>, and they are put in the node_modules folder
+
+**global packages** are all put in a single place in your system, regardless of where you run npm install -g <package-name>
+
+Node.js always runs require synchronously. If you require an external module from within functions your module will be synchronously loaded when those functions run
 
 # Beneficts of using Node.js
 **Aynchronous and Event Driven** All APIs of Node.js library are aynchronous that is non-blocking
+
 **Single Threaded but highly Scalable**: Node.js uses a single threaded model with event looping
+
 **Very Fast**  Being built on Google Chrome's V8 JavaScript Engine, Node.js library is very fast in code execution
+
 **No Buffering** Node.js applications never buffer any data. These applications simply output the data in chunks
 
 # Aynchronous API
@@ -32,5 +41,9 @@ fs.readFile(filePath, function(err, data) {
   // use the data object
 });
 ```
+
+**process.cwd()** is a method of global object process, returns a string value which is the current working directory of the Node.js process
+
+**__dirname** is the directory name of the current script as a string value
 
 
