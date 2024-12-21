@@ -14,3 +14,23 @@ libuv is a C library that is used to abstract non-blocking I/O operations to a c
 # NPM
 npm is the standard package manager for Node.js
 
+# Beneficts of using Node.js
+**Aynchronous and Event Driven** All APIs of Node.js library are aynchronous that is non-blocking
+**Single Threaded but highly Scalable**: Node.js uses a single threaded model with event looping
+**Very Fast**  Being built on Google Chrome's V8 JavaScript Engine, Node.js library is very fast in code execution
+**No Buffering** Node.js applications never buffer any data. These applications simply output the data in chunks
+
+# Aynchronous API
+All APIs of Node.js library are aynchronous that is non-blocking
+
+# Error prefer Error-First Callback
+```javascript
+fs.readFile(filePath, function(err, data) {
+  if (err) {
+    //handle the error
+  }
+  // use the data object
+});
+```
+
+
