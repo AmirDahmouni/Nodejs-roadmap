@@ -11,6 +11,19 @@ a program that converts Javascript code into lower level or machine code that mi
 # Libuv
 libuv is a C library that is used to abstract non-blocking I/O operations to a consistent interface across all supported platforms. It provides mechanisms to handle file system, DNS, network, child processes, pipes, signal handling, polling and streamin
 
+# Key features of Node.js
+**Asynchronous event driven IO helps concurrent request handling**
+
+**Fast in Code execution**
+
+**Single Threaded but Highly Scalable**
+
+**Node.js library uses JavaScript**
+
+**There is an Active and vibrant community for the Node.js framework**
+
+**No Buffering**
+
 # NPM
 **npm** is the standard package manager for Node.js
 
