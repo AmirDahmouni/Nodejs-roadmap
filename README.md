@@ -31,6 +31,12 @@ libuv is a C library that is used to abstract non-blocking I/O operations to a c
 
 **global packages** are all put in a single place in your system, regardless of where you run npm install -g <package-name>
 
+The **@** symbol is used to denote a scoped package, which is a way to group related npm packages under a namespace
+npm install @nestjs/core
+
+**package.json**
+file holds various metadata relevant to the project,This file is used to give information to npm that allows it to identify the project as well as handle the project's dependencies
+
 Node.js always runs require synchronously. If you require an external module from within functions your module will be synchronously loaded when those functions run
 
 # Beneficts of using Node.js
@@ -58,5 +64,20 @@ fs.readFile(filePath, function(err, data) {
 **process.cwd()** is a method of global object process, returns a string value which is the current working directory of the Node.js process
 
 **__dirname** is the directory name of the current script as a string value
+
+# Some built-in Globals in Nodejs
+
+**true globals**
+
+**global** Setting a property to this namespace makes it globally visible within the running process
+
+**process** which provides interaction with the current Node.js process
+
+**console** which wraps various STDIO functionality in a browser-like way
+
+**setTimeout()**, **clearTimeout()**, **setInterval()**, **clearInterval()** The built-in timer functions are globals
+
+**pseudo-globals**
+**module** ,**module.exports**, **exports**,**__filename**, **__dirname**, **require**
 
 
