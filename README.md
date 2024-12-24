@@ -15,69 +15,7 @@ a program that converts Javascript code into lower level or machine code that mi
 # Libuv
 libuv is a C library that is used to abstract non-blocking I/O operations to a consistent interface across all supported platforms. It provides mechanisms to handle file system, DNS, network, child processes, pipes, signal handling, polling and streamin
 
-# Key features of Node.js
-**Asynchronous event driven IO helps concurrent request handling**
 
-**Fast in Code execution**
-
-**Single Threaded but Highly Scalable**
-
-**Node.js library uses JavaScript**
-
-**There is an Active and vibrant community for the Node.js framework**
-
-**No Buffering**
-
-# NPM
-**npm** is the standard package manager for Node.js
-
-**local packages** are installed in the directory where you run npm install <package-name>, and they are put in the node_modules folder
-
-**global packages** are all put in a single place in your system, regardless of where you run npm install -g <package-name>
-
-The **@** symbol is used to denote a scoped package, which is a way to group related npm packages under a namespace
-npm install @nestjs/core
-
-**package.json**
-file holds various metadata relevant to the project,This file is used to give information to npm that allows it to identify the project as well as handle the project's dependencies
-
-Node.js always runs require synchronously. If you require an external module from within functions your module will be synchronously loaded when those functions run
-
-# require vs ES6 import
-
-**require**:
-Type: CommonJS module system
-
-Usage: Used in Node.js environments
-
-Behavior: Loads modules synchronously at runtime
-
-Flexibility: Can be called conditionally or dynamically (inside if)
-
-**import**:
-Type: ES6 module system.
-
-Usage: Works in modern JavaScript
-
-Behavior: Statically analyzed; must be at the top level
-```javascript
-if (condition) {
-  import('./module').then(module => {
-    module.doSomething();
-  });
-}
-```
-# Beneficts of using Node.js
-**Aynchronous and Event Driven** All APIs of Node.js library are aynchronous that is non-blocking
-
-**Single Threaded but highly Scalable**: Node.js uses a single threaded model with event looping
-
-**Very Fast**  Being built on Google Chrome's V8 JavaScript Engine, Node.js library is very fast in code execution
-
-**No Buffering** Node.js applications never buffer any data. These applications simply output the data in chunks
-
-# Aynchronous API
-All APIs of Node.js library are aynchronous that is non-blocking
 
 # Error prefer Error-First Callback
 ```javascript
@@ -106,70 +44,8 @@ fs.readFile(filePath, function(err, data) {
 **setTimeout()**, **clearTimeout()**, **setInterval()**, **clearInterval()** The built-in timer functions are globals
 
 **pseudo-globals**
+
 **module** ,**module.exports**, **exports**,**__filename**, **__dirname**, **require**
-
-
-# Threads
-Node.js is designed to be single-threaded, operating primarily on an event-driven architecture using the event loop. However, it provides mechanisms to leverage additional threads when needed
-
-**Worker Threads**
-
-Workers communicate with the main thread using message passing (via postMessage and onmessage).
-
-```javascript
-const { Worker } = require('worker_threads');
-
-if (isMainThread) {
-  const worker = new Worker('./worker.js'); // Worker script
-  worker.postMessage('Hello, Worker!');
-  worker.on('message', (message) => {
-    console.log('Message from worker:', message);
-  });
-} else {
-  parentPort.on('message', (message) => {
-    console.log('Message from main thread:', message);
-    parentPort.postMessage('Hello, Main Thread!');
-  });
-}
-
-```
-
-**Child Processes**
-
-The child_process module enables spawning child processes to execute external programs or scripts
-
-**spawn()**: Executes a command.
-
-**exec()**: Executes a command with a buffer for the output.
-
-**fork()**: Spawns a new Node.js process with IPC enabled for communication.
-
-```javascript
-const { fork } = require('child_process');
-
-const child = fork('./child.js'); // Fork a new process
-child.send('Hello, Child Process!');
-child.on('message', (message) => {
-  console.log('Message from child:', message);
-});
-
-```
-
-# Node.js Built-in Cluster VS PM2 clustering
-
-The choice between Node.js built-in cluster and PM2 clustering depends on your project's requirements, deployment environment
-
-**Node.js Built-in Cluster**: A native module to enable clustering by forking multiple worker processes.
-
-Use Case (Small/Custom Projects): When you need custom clustering logic and are comfortable managing processes manually.
-
-**PM2 Clustering**: A popular production-ready process manager with built-in clustering support.
-
-Simplified clustering (pm2 start app.js -i max).
-
-Integrates well with CI/CD and ecosystem modules
-
-Use Case: When you want a robust, feature-rich solution with minimal setup for production environments.
 
 
 
