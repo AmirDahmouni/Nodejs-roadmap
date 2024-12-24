@@ -43,6 +43,30 @@ file holds various metadata relevant to the project,This file is used to give in
 
 Node.js always runs require synchronously. If you require an external module from within functions your module will be synchronously loaded when those functions run
 
+# require vs ES6 import
+
+**require**:
+Type: CommonJS module system
+
+Usage: Used in Node.js environments
+
+Behavior: Loads modules synchronously at runtime
+
+Flexibility: Can be called conditionally or dynamically (inside if)
+
+**import**:
+Type: ES6 module system.
+
+Usage: Works in modern JavaScript
+
+Behavior: Statically analyzed; must be at the top level
+```javascript
+if (condition) {
+  import('./module').then(module => {
+    module.doSomething();
+  });
+}
+```
 # Beneficts of using Node.js
 **Aynchronous and Event Driven** All APIs of Node.js library are aynchronous that is non-blocking
 
@@ -131,6 +155,21 @@ child.on('message', (message) => {
 
 ```
 
+# Node.js Built-in Cluster VS PM2 clustering
+
+The choice between Node.js built-in cluster and PM2 clustering depends on your project's requirements, deployment environment
+
+**Node.js Built-in Cluster**: A native module to enable clustering by forking multiple worker processes.
+
+Use Case (Small/Custom Projects): When you need custom clustering logic and are comfortable managing processes manually.
+
+**PM2 Clustering**: A popular production-ready process manager with built-in clustering support.
+
+Simplified clustering (pm2 start app.js -i max).
+
+Integrates well with CI/CD and ecosystem modules
+
+Use Case: When you want a robust, feature-rich solution with minimal setup for production environments.
 
 
 
