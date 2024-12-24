@@ -33,5 +33,27 @@ Open Chrome and go to chrome://inspect
 Click on Inspect next to your Node.js app to open the DevTools interface
 
 
+# Using Visual Studio Code (VSCode) Debugger
+
+Example launch.json
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/app.js"
+    }
+  ]
+}
+```
+
+
+
+
+
 
 
