@@ -6,13 +6,6 @@ The choice between Node.js built-in cluster and PM2 clustering depends on your p
 
 Use Case (Small/Custom Projects): When you need custom clustering logic and are comfortable managing processes manually.
 
-**PM2 Clustering**: A popular production-ready process manager with built-in clustering support.
-
-Simplified clustering (pm2 start app.js -i max).
-
-Integrates well with CI/CD and ecosystem modules
-
-Use Case: When you want a robust, feature-rich solution with minimal setup for production environments.
 
 # When would you use cluster module in Node.js ?
 
@@ -56,11 +49,10 @@ if (cluster.isMaster) {
 }
 ```
 
-
 # When Not to Use the Cluster Module ?
 
 **CPU-Intensive Workloads**
 
 **Small Applications**
 
-**When Using a Process Manager Like PM2**: Tools like PM2 abstract clustering and offer additional features such as monitoring and process management, reducing the need for manual clustering.
+
